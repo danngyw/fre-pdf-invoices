@@ -12,6 +12,7 @@ Text Domain: enginetheme
 
 define ('FRE_PDF_PATH', dirname(__FILE__) );
 require_once FRE_PDF_PATH.'/debug.php';
+require_once FRE_PDF_PATH.'/admin.php';
 Class Fre_PDF_Invoices{
 	function __construct(){
 
