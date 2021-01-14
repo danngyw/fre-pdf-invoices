@@ -151,8 +151,6 @@ function fre_pdf_get_file($order_id, $payer ){
 		$filename = $document->get_filename();
 		$filename = "/invoice-{$order_id}.pdf";
 		$pdf_path = $tmp_path . $filename;
-
-		var_dump($pdf_path);
 		$lock_file =  true ;
 
 		// if this file already exists in the temp path, we'll reuse it if it's not older than 60 seconds
@@ -210,6 +208,7 @@ function fre_pdf_get_html($order_id, $user){
   	$order_pay 	= $order->get_order_data();
   	$product 	= array_pop( $order_pay['products'] );
 
+  	$order_date = $order_pay['created_date']; //2021-01-14 14:14:17
 	$sku 		= $product['ID'];
   	$pack_des 	= $product['NAME'];
   	$type 		= $product['TYPE']; //fre_credit_plan
@@ -254,7 +253,7 @@ function fre_pdf_get_html($order_id, $user){
 
 					<tr class="invoice-date">
 						<th><?php _e( 'Invoice Date:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
-						<td><?php  echo get_the_date( 'm d, Y', $order_id ); ?></td>
+						<td><?php  echo date( 'M d, Y', strtotime($order_date) ); ?></td>
 					</tr>
 					<!--
 					<tr class="order-number ">
@@ -293,6 +292,10 @@ function fre_pdf_get_html($order_id, $user){
 
 						<dt class="sku"><?php _e( 'SKU:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt>
 						<dd class="sku"><?php echo $sku; ?></dd>
+						<?php if($type == "fre_credit_plan"){?>
+							<dt class="sku"><?php _e( 'Type:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt>
+							<dd class="sku"> Deposit Credit</dd>
+						<?php } ?>
 
 					</dl>
 

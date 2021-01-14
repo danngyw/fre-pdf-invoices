@@ -21,19 +21,21 @@ function debug_pdf_invoice(){
 	$order     	= new AE_Order( $order_id );
   	$order_pay 	= $order->get_order_data();
 
-
+  	$order_date = $order_pay['created_date']; //2021-01-14 14:14:17
   	$product = array_pop( $order_pay['products'] );
 
 
   	$sku 		= $product['ID'];
   	$pack_name 	= $product['NAME'];
   	$type 		= $product['TYPE']; //fre_credit_plan
-
+  	echo '<pre>';
+  	var_dump($order_pay);
+  	echo '</pre>';
 
   	global $user_ID;
 	$order_id = 258;
 	$user = get_userdata($user_ID);
-	$attachments = fre_pdf_get_file($order_id, $user);
+	// $attachments = fre_pdf_get_file($order_id, $user);
 
 }
 add_action('wp_footer','debug_pdf_invoice');
