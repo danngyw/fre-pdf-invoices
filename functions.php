@@ -149,8 +149,10 @@ function fre_pdf_get_file($order_id, $payer ){
 
 		$tmp_path = fre_invoice_get_tmp_path('invoice');
 		$filename = $document->get_filename();
+		$filename = "/invoice-{$order_id}.pdf";
 		$pdf_path = $tmp_path . $filename;
 
+		var_dump($pdf_path);
 		$lock_file =  true ;
 
 		// if this file already exists in the temp path, we'll reuse it if it's not older than 60 seconds
