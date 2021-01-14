@@ -28,9 +28,9 @@ function debug_pdf_invoice(){
   	$sku 		= $product['ID'];
   	$pack_name 	= $product['NAME'];
   	$type 		= $product['TYPE']; //fre_credit_plan
-  	echo '<pre>';
-  	var_dump($order_pay);
-  	echo '</pre>';
+  	// echo '<pre>';
+  	// var_dump($order_pay);
+  	// echo '</pre>';
 
   	global $user_ID;
 	$order_id = 258;
@@ -38,7 +38,7 @@ function debug_pdf_invoice(){
 	// $attachments = fre_pdf_get_file($order_id, $user);
 
 }
-add_action('wp_footer','debug_pdf_invoice');
+// add_action('wp_footer','debug_pdf_invoice');
 
 function fre_send_mail_vs_attachment_debug(){
 
