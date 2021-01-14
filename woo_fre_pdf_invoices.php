@@ -20,7 +20,7 @@ function debug_pdf_invoice(){
 	$order_id 	= 289 ;
 	$order     	= new AE_Order( $order_id );
   	$order_pay 	= $order->get_order_data();
-  	echo '<pre>';
+
 
   	$product = array_pop( $order_pay['products'] );
 
@@ -35,10 +35,8 @@ function debug_pdf_invoice(){
 	// $user = get_userdata($user_ID);
 	// $html = fre_pdf_get_html($order_id, $user);
 
-
-  	echo '</pre>';
 }
-add_action('wp_footer','debug_pdf_invoice');
+// add_action('wp_footer','debug_pdf_invoice');
 
 function fre_send_mail_vs_attachment_debug(){
 
