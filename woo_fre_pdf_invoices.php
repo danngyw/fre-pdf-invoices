@@ -17,18 +17,21 @@ function pdf_includes_files(){
 add_action('after_setup_theme','pdf_includes_files');
 
 function debug_pdf_invoice(){
-	$document_type = 'invoice';
-	$email_order_id = 239;
-	echo '<pre>';
-	$document = wcpdf_get_document( $document_type, (array) $email_order_id, true );
+	$order_id 	= 289 ;
+	$order     	= new AE_Order( $order_id );
+  	$order_pay 	= $order->get_order_data();
+  	echo '<pre>';
+  	var_dump($order_pay);
 
+  	$product = array_pop( $order_pay['products'] );
 
-	$order_id = 205;
-	$document = wcpdf_get_document( $document_type, (array) $email_order_id, true );
-
-	echo '</pre>';
+  	var_dump($product);
+  	$sku = $product['ID'];
+  	$pack_name = $product['NAME'];
+  	$type = $product['TYPE']; //fre_credit_plan
+  	echo '</pre>';
 }
-//add_action('wp_footer','debug_pdf_invoice');
+add_action('wp_footer','debug_pdf_invoice');
 
 function fre_send_mail_vs_attachment_debug(){
 

@@ -204,8 +204,14 @@ function fre_pdf_get_file($order_id, $payer ){
 }
 
 function fre_pdf_get_html($order_id, $user){
-	$order     = new AE_Order( $order_id );
-  	$order_pay = $order->get_order_data();
+	$order     	= new AE_Order( $order_id );
+  	$order_pay 	= $order->get_order_data();
+  	$product 	= array_pop( $order_pay['products'] );
+
+	$sku 		= $product['ID'];
+  	$pack_des 	= $product['NAME'];
+  	$type 		= $product['TYPE']; //fre_credit_plan
+  	$des = $pack_des;
 
 	ob_start(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo plugins_url();?>/woocommerce-pdf-invoices-packing-slips/templates/Simple/style.css" />
@@ -277,12 +283,12 @@ function fre_pdf_get_html($order_id, $user){
 			<tr>
 				<td class="product">
 					<?php $description_label = __( 'Description', 'woocommerce-pdf-invoices-packing-slips' ); // registering alternate label translation ?>
-					<span class="item-name">Item Name</span>
+					<span class="item-name"><?php echo $des;?></span>
 
-					<span class="item-meta">Item Meta</span>
+
 					<dl class="meta">
-						<?php $description_label = __( 'SKU', 'woocommerce-pdf-invoices-packing-slips' ); // registering alternate label translation ?>
-						<?php if( !empty( $order_pay['sku'] ) ) : ?><dt class="sku"><?php _e( 'SKU:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt><dd class="sku"><?php echo $order_pay['sku']; ?></dd><?php endif; ?>
+
+						<dt class="sku"><?php _e( 'SKU:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt><dd class="sku"><?php echo $sku; ?></dd>
 
 					</dl>
 
