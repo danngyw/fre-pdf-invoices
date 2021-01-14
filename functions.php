@@ -246,7 +246,7 @@ function fre_pdf_get_html($order_id, $user){
 
 					<tr class="invoice-number">
 						<th><?php _e( 'Invoice Number:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
-						<td>#555</td>
+						<td>#<?php echo $order_id;?></td>
 					</tr>
 
 
@@ -254,11 +254,12 @@ function fre_pdf_get_html($order_id, $user){
 						<th><?php _e( 'Invoice Date:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 						<td><?php  echo get_the_date( 'm d, Y', $order_id ); ?></td>
 					</tr>
-
-					<tr class="order-number">
+					<!--
+					<tr class="order-number ">
 						<th><?php _e( 'Order Number:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 						<td> #<?php echo $order_id;?></td>
 					</tr>
+					!-->
 
 					<tr class="payment-method">
 						<th><?php _e( 'Payment Method:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
