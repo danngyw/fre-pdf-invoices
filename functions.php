@@ -262,7 +262,7 @@ function fre_pdf_get_html($order_id, $user){
 					!-->
 
 					<tr class="payment-method">
-						<th><?php _e( 'Payment Method:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
+						<th><?php _e( 'Payment Gateway:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 						<td><?php echo $order_pay['payment'];?></td>
 					</tr>
 				</table>
