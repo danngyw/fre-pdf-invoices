@@ -33,7 +33,7 @@ function debug_pdf_invoice(){
 function fre_send_mail_vs_attachment_debug(){
 
 	$plugins_url = plugins_url();
-	var_dump($plugins_url);
+
 	// $order_id = 258;
 	// $html = fre_pdf_get_html($order_id);
 
