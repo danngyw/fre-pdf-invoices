@@ -211,7 +211,7 @@ function fre_pdf_get_html($order_id, $user){
 	$sku 		= $product['ID'];
   	$pack_des 	= $product['NAME'];
   	$type 		= $product['TYPE']; //fre_credit_plan
-  	$des = $pack_des;
+  	$des 		= $pack_des;
 
 	ob_start(); ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo plugins_url();?>/woocommerce-pdf-invoices-packing-slips/templates/Simple/style.css" />
@@ -288,7 +288,8 @@ function fre_pdf_get_html($order_id, $user){
 
 					<dl class="meta">
 
-						<dt class="sku"><?php _e( 'SKU:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt><dd class="sku"><?php echo $sku; ?></dd>
+						<dt class="sku"><?php _e( 'SKU:', 'woocommerce-pdf-invoices-packing-slips' ); ?></dt>
+						<dd class="sku"><?php echo $sku; ?></dd>
 
 					</dl>
 

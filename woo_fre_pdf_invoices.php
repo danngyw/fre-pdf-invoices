@@ -21,24 +21,29 @@ function debug_pdf_invoice(){
 	$order     	= new AE_Order( $order_id );
   	$order_pay 	= $order->get_order_data();
   	echo '<pre>';
-  	var_dump($order_pay);
 
   	$product = array_pop( $order_pay['products'] );
 
-  	var_dump($product);
-  	$sku = $product['ID'];
-  	$pack_name = $product['NAME'];
-  	$type = $product['TYPE']; //fre_credit_plan
+
+  	$sku 		= $product['ID'];
+  	$pack_name 	= $product['NAME'];
+  	$type 		= $product['TYPE']; //fre_credit_plan
+
+
+  	global $user_ID;
+	$order_id = 258;
+	// $user = get_userdata($user_ID);
+	// $html = fre_pdf_get_html($order_id, $user);
+
+
   	echo '</pre>';
 }
 add_action('wp_footer','debug_pdf_invoice');
 
 function fre_send_mail_vs_attachment_debug(){
 
-	$plugins_url = plugins_url();
 
-	// $order_id = 258;
-	// $html = fre_pdf_get_html($order_id);
+
 
 	// $oder_id 		= 239;
 	// $attachments 	= array();
