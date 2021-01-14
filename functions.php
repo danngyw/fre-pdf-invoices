@@ -222,7 +222,7 @@ function fre_pdf_get_html($order_id, $user){
 				<img src="https://creedwoodcompany.com/wp-content/themes/freelanceengine/img/logo-fre.png"> &nbsp; &nbsp; &nbsp;
 			</td>
 			<td class="shop-info">
-				<div class="shop-name"><h3>Website ABC</h3></div>
+				<div class="shop-name"><h3><?php echo get_option('blogname');?></h3></div>
 				<div class="shop-address">123 Address</div>
 			</td>
 		</tr>
