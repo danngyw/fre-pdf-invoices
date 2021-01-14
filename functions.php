@@ -208,11 +208,12 @@ function fre_pdf_get_html($order_id, $user){
   	$order_pay = $order->get_order_data();
 
 	ob_start(); ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo plugins_url();?>/woocommerce-pdf-invoices-packing-slips/templates/Simple/style.css" />
 
 	<table class="head container">
 		<tr>
 			<td class="header">
-			<img src="https://creedwoodcompany.com/wp-content/themes/freelanceengine/img/logo-fre.png">
+				<img src="https://creedwoodcompany.com/wp-content/themes/freelanceengine/img/logo-fre.png"> &nbsp; &nbsp; &nbsp;
 			</td>
 			<td class="shop-info">
 				<div class="shop-name"><h3>Website ABC</h3></div>
@@ -223,7 +224,7 @@ function fre_pdf_get_html($order_id, $user){
 
 	<h1 class="document-type-label">Invoice</h1>
 
-
+	<div class="bottom-spacer"><br /> &nbsp; </div>
 	<table class="order-data-addresses">
 		<tr>
 			<td class="address billing-address">
@@ -252,10 +253,7 @@ function fre_pdf_get_html($order_id, $user){
 						<th><?php _e( 'Order Number:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 						<td> #<?php echo $order_id;?></td>
 					</tr>
-					<tr class="order-date">
-						<th><?php _e( 'Order Date:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
-						<td><?php  echo get_the_date( 'm d, Y', $order_id ); ?></td>
-					</tr>
+
 					<tr class="payment-method">
 						<th><?php _e( 'Payment Method:', 'woocommerce-pdf-invoices-packing-slips' ); ?></th>
 						<td><?php echo $order_pay['payment'];?></td>
@@ -334,5 +332,6 @@ function fre_pdf_get_html($order_id, $user){
 
 	<?php
 	$html = ob_get_contents();
+	ob_end_clean();
 	return $html;
 }
