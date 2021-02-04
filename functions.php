@@ -223,8 +223,8 @@ function fre_pdf_get_html($order_id, $user){
 				<?php echo fre_logo();?> &nbsp; &nbsp; &nbsp;
 			</td>
 			<td class="shop-info">
-				<div class="shop-name"><h3><?php echo get_option('blogname');?></h3></div>
-				<div class="shop-address">123 Address</div>
+				<div class="shop-name"><h3>Organizly SRL-D</h3></div>
+				<div class="shop-address">RO 39290937 Registry No.  J26/681/2018 </div>
 			</td>
 		</tr>
 	</table>
