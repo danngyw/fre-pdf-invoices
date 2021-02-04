@@ -235,7 +235,8 @@ function fre_pdf_get_html($order_id, $user){
 	<table class="order-data-addresses">
 		<tr>
 			<td class="address billing-address">
-				<h3><?php _e( 'Billing Address:', 'woocommerce-pdf-invoices-packing-slips' ); ?></h3>
+				<h3><?php _e( 'Billing Address:', 'et_domain' ); ?></h3>
+				<div class="billing-name"><?php echo $user->display_name;?></div>
 				<div class="billing-email"><?php echo $user->user_email;?></div>
 				<div class="billing-phone">+88 0949494959559 </div>
 			</td>
