@@ -235,10 +235,25 @@ function fre_pdf_get_html($order_id, $user){
 	<table class="order-data-addresses">
 		<tr>
 			<td class="address billing-address">
+				<?php
+
+				//company_name
+				$company_name 	= get_user_meta($user->ID,'company_name', true);
+				$cifcui 		= get_user_meta($user->ID,'cifcui', true);
+				$phone 			= get_user_meta($user->ID,'phone', true);
+				?>
 				<h3><?php _e( 'Billing Address:', 'et_domain' ); ?></h3>
 				<div class="billing-name"><?php echo $user->display_name;?></div>
+
 				<div class="billing-email"><?php echo $user->user_email;?></div>
-				<div class="billing-phone">+88 0949494959559 </div>
+
+				<?php if($phone){?>
+					<div class="billing-phone"><?php echo $phone;?></div>
+				<?php } ?>
+				<?php if($cifcui){ ?>
+					<div class="billing-email"><?php echo $cifcui;?></div>
+				<?php } ?>
+
 			</td>
 			<td class="address shipping-address">
 				&nbsp;
