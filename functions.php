@@ -314,12 +314,12 @@ function fre_pdf_get_html($order_id, $user){
 						<h3><?php _e( 'Notes', 'woocommerce-pdf-invoices-packing-slips' ); ?></h3>
 						Note here
 					</div>
+					<!--
 					<div class="customer-notes">
-					<h3><?php _e( 'Customer Notes', 'woocommerce-pdf-invoices-packing-slips' ); ?></h3>
+						<h3><?php _e( 'Customer Notes', 'woocommerce-pdf-invoices-packing-slips' ); ?></h3>
 							Customer Notes
-
-
 					</div>
+					!-->
 				</td>
 				<td class="no-borders" colspan="2">
 					<table class="totals">
