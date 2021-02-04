@@ -1,6 +1,6 @@
 <?php
 /**
-Plugin Name: Fre PDF Invoices
+Plugin Name: Fre PDF Invoices New
 Plugin URI: http://enginethemes.com/
 Description: Integrates the Stripe payment gateway to your Directory, Freelance site
 Version: 1.0
