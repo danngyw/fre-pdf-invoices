@@ -50,10 +50,10 @@ function fre_send_mail_vs_attachment_debug(){
 	$attachments 	= fre_pdf_get_file($oder_id);
 
 	$attachments = array( WP_CONTENT_DIR . '/uploads/wpo_wcpdf/invoiceinvoice-239.pdf' );
-	$attachments = array($pdf_file[0] );
+	// $attachments = array($pdf_file[0] );
 	$t = wp_mail('danhoat@gmail.com', 'Mail Subject For Test PDF Attach File '. time(),  'Test Content', $header = '', $attachments);
 }
-add_action('wp_footer','fre_send_mail_vs_attachment_debug');
+//add_action('wp_footer','fre_send_mail_vs_attachment_debug');
 
 function fre_attach_pdf_to_email($attachments, $attachments_check){
 	$order_id 		= isset($attachments_check['orders']) ? $attachments_check['orders'] : 0;
